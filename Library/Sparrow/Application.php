@@ -4,6 +4,7 @@
  */
 namespace Sparrow;
 
+
 final class Application {
     /**
      * Version
@@ -32,9 +33,16 @@ final class Application {
         try {
             $this->_di = new DependencyInjection();
 
-            $this->_di->ConfigReader = new ConfigReader( $root . 'Storage/Config.php' );
+            $config = $this->_di->ConfigReader = new ConfigReader( $root . 'Storage/Config.php' );
 
-            $this->_di->Database = new Database();
+            $this->_di->Database = new Database(
+                $config->database->host->get(),
+                $config->database->name->get(),
+                $config->database->user->get(),
+                $config->database->password->get(),
+                $config->database->prefix->get(),
+                $config->database->port->get() );
+
         } catch( Exception $exception ) {
             echo $exception;
         }

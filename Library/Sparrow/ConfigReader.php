@@ -52,6 +52,8 @@ class ConfigReader {
 
             $config = require_once( $this->_file );
 
+
+
             if( is_array( $config ) ) {
                 $this->_data = $config;
             }
@@ -168,7 +170,7 @@ class ConfigReader {
 
             $content = '<?php' . "\n";
 
-            $content .= var_export( $this->_data, true ) . ';' . "\n";
+            $content .= 'return ' . var_export( $this->_data, true ) . ';' . "\n";
 
             $content .= '?>';
 

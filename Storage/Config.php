@@ -1,5 +1,5 @@
 <?php
-array (
+return array (
   'database' => 
   array (
     'host' => 'localhost',
@@ -7,7 +7,7 @@ array (
     'user' => 'root',
     'password' => 'a',
     'prefix' => 'sp_',
-    'port' => 0,
+    'port' => 3306,
   ),
   'board' => 
   array (
