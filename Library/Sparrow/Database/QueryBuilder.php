@@ -64,6 +64,20 @@ class QueryBuilder {
     protected $_from = [];
 
     /**
+     * UPDATE table
+     *
+     * @var string
+     */
+    protected $_update = '';
+
+    /**
+     * SET
+     *
+     * @var array
+     */
+    protected $_set = [];
+
+    /**
      * WHERE clause
      *
      * @var array
@@ -144,6 +158,8 @@ class QueryBuilder {
             $key = false;
         }
 
+        $this->_bind[ $key ] = $val2;
+
         $this->_where[] = [ $val1, $sign, $val2, $key ];
 
         return $this;
@@ -207,6 +223,44 @@ class QueryBuilder {
     }
 
     /**
+     * UPDATE
+     *
+     * @param string $table Table to update data
+     * @return \Sparrow\Database\QueryBuilder
+     */
+    public function update( $table ) {
+        $this->_type = self::TYPE_UPDATE;
+        $this->_update = $table;
+
+        return $this;
+    }
+
+    /**
+     * SET
+     *
+     * @param string $column
+     * @param mixed $value
+     * @param string|boolean $bind
+     * @return \Sparrow\Database\QueryBuilder
+     */
+    public function set( $column, $value, $bind = true ) {
+        if( $bind === true ) {
+            $key = 'bind' . count( $this->_bind );
+        } else if( $bind != false ) {
+            $key = $bind;
+        } else if( $bind === false ) {
+            $key = false;
+        }
+
+        $this->_bind[ $key ] = $value;
+
+
+        $this->_set[ $column ] = [ $value, $key ];
+
+        return $this;
+    }
+
+    /**
      * Build SELECR query
      *
      * @return string
@@ -247,24 +301,7 @@ class QueryBuilder {
         }
 
         // WHERE
-        if( count( $this->_where ) ) {
-            $where = '';
-
-            foreach( $this->_where AS $whr ) {
-                if( $whr[3] === false ) {
-                    $where .= $whr[0] . ' ' . $whr[1] . ' \'' . $whr[2] . '\'';
-                } else {
-                    $where .= $whr[0] . ' ' . $whr[1] . ' :' . $whr[3];
-                }
-
-                $where .= ', ';
-            }
-
-
-            // Remove last character (,)
-            $where = substr( $where, 0, -2 );
-            $sql .= ' WHERE ' . $where;
-        }
+        $sql .= $this->_whereClause();
 
         // GROUP BY
         if( count( $this->_group ) ) {
@@ -322,24 +359,71 @@ class QueryBuilder {
             $sql = 'DELETE FROM ' . $this->_from[0];
 
             // WHERE
-            if( count( $this->_where ) ) {
-                $where = '';
+            $sql .= $this->_whereClause();
 
-                foreach( $this->_where AS $whr ) {
-                    if( $whr[3] === false ) {
-                        $where .= $whr[0] . ' ' . $whr[1] . ' \'' . $whr[2] . '\'';
-                    } else {
-                        $where .= $whr[0] . ' ' . $whr[1] . ' :' . $whr[3];
-                    }
+            return $sql;
+        } else {
+            return '';
+        }
+    }
 
-                    $where .= ', ';
+    /**
+     * Build UPDATE query
+     *
+     * @return string
+     */
+    protected function _updateQuery() {
+        if( $this->_update && count( $this->_set ) && $this->_type == self::TYPE_UPDATE ) {
+            $sql = 'UPDATE ' . $this->_update;
+            $set = ' SET ';
+
+            foreach( $this->_set AS $column => $data ) {
+                if( $data[1] === false ) {
+                    //no bind
+                    $set .= $column . ' = \'' . $data[0] . '\', ';
+                } else {
+                    $set .= $column . ' = :' . $data[1] . ', ';
+                }
+            }
+
+            // Remove last character (,)
+            $set = substr( $set, 0, -2 );
+            $sql .= $set;
+
+            // WHERE
+            $sql .= $this->_whereClause();
+
+            return $sql;
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Build WHERE clause
+     *
+     * @return string
+     */
+    public function _whereClause() {
+        if( count( $this->_where ) ) {
+            $sql = '';
+            $where = '';
+
+            foreach( $this->_where AS $whr ) {
+                if( $whr[3] === false ) {
+                    $where .= $whr[0] . ' ' . $whr[1] . ' \'' . $whr[2] . '\'';
+                } else {
+                    $where .= $whr[0] . ' ' . $whr[1] . ' :' . $whr[3];
                 }
 
-
-                // Remove last character (,)
-                $where = substr( $where, 0, -2 );
-                $sql .= ' WHERE ' . $where;
+                $where .= ' AND ';
             }
+
+
+            // Remove last character (,)
+            $where = substr( $where, 0, -4 );
+            $sql .= ' WHERE ' . $where;
+
             return $sql;
         } else {
             return '';
@@ -358,6 +442,8 @@ class QueryBuilder {
             $sql = $this->_selectQuery();
         } else if( $this->_type === self::TYPE_DELETE ) {
             $sql = $this->_deleteQuery();
+        } else if( $this->_type === self::TYPE_UPDATE ) {
+            $sql = $this->_updateQuery();
         }
 
 
