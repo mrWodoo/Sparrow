@@ -1,12 +1,54 @@
 <?php
 /**
- * SELECT query builder
+ * Created by PhpStorm.
+ * User: denis
+ * Date: 25.06.2014
+ * Time: 00:27
  */
-namespace Sparrow\Database\Query;
+namespace Sparrow\Database;
 
-use Sparrow\Database\QueryAbstract;
+class QueryBuilder {
+    /**
+     * Query type
+     *
+     * @var int
+     */
+    protected $_type = 0;
 
-class Select extends QueryAbstract {
+    /**
+     * SELECT type
+     */
+    const TYPE_SELECT = 1;
+
+    /**
+     * UPDATE
+     */
+    const TYPE_UPDATE = 2;
+
+    /**
+     * DELETE
+     */
+    const TYPE_DELETE = 4;
+
+    /**
+     * INSERT
+     */
+    const TYPE_INSERT = 8;
+
+    /**
+     * Current sql syntax
+     *
+     * @var string
+     */
+    protected $_sql = '';
+
+    /**
+     * Parameters to bind
+     *
+     * @var array
+     */
+    protected $_bind = [];
+
     /**
      * What to select
      *
@@ -53,12 +95,12 @@ class Select extends QueryAbstract {
      * Add data to select
      *
      * @param string $select,... Unlimited number of additional parameters
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function select( $select ) {
         $args = func_get_args();
 
-        $this->_operation = 'select';
+        $this->_type = self::TYPE_SELECT;
 
         foreach( $args AS $arg ) {
             $this->_select[] = $arg;
@@ -68,10 +110,10 @@ class Select extends QueryAbstract {
     }
 
     /**
-     * Add FROM
+     * FROM
      *
      * @param string $from,... unlimited number of additional parameters
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function from( $from ) {
         $args = func_get_args();
@@ -90,7 +132,7 @@ class Select extends QueryAbstract {
      * @param string $sign Comparative sign
      * @param mixed $val2
      * @param string|boolean $bind If != false then bind with given $bind key, if true then generate random bind key
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function where( $val1, $sign, $val2, $bind = false ) {
 
@@ -111,7 +153,7 @@ class Select extends QueryAbstract {
      * Add GROUP BY
      *
      * @param string $group,...
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function groupBy( $group ) {
         $args = func_get_args();
@@ -128,7 +170,7 @@ class Select extends QueryAbstract {
      * ORDER BY
      *
      * @param string $order,...
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function orderBy( $order ) {
         $args = func_get_args();
@@ -145,7 +187,7 @@ class Select extends QueryAbstract {
      *
      * @param integer $limitStart
      * @param integer $limitEnd
-     * @return \Sparrow\Database\Query\Select
+     * @return \Sparrow\Database\QueryBuilder
      */
     public function limit( $limitStart, $limitEnd = false ) {
         $this->_limit = [ $limitStart, $limitEnd ];
@@ -154,12 +196,27 @@ class Select extends QueryAbstract {
     }
 
     /**
-     * Generate SQL
+     * DELETE
+     *
+     * @return \Sparrow\Database\QueryBuilder
+     */
+    public function delete() {
+        $this->_type = self::TYPE_DELETE;
+
+        return $this;
+    }
+
+    /**
+     * Build SELECR query
      *
      * @return string
      */
-    public function sql() {
+    protected function _selectQuery() {
         $sql = '';
+
+        if( $this->_type != self::TYPE_SELECT ) {
+            return '';
+        }
 
 
         if( count( $this->_select ) ) {
@@ -195,7 +252,7 @@ class Select extends QueryAbstract {
 
             foreach( $this->_where AS $whr ) {
                 if( $whr[3] === false ) {
-                    $where .= $whr[0] . ' ' . $whr[1] . ' ' . $whr[2];
+                    $where .= $whr[0] . ' ' . $whr[1] . ' \'' . $whr[2] . '\'';
                 } else {
                     $where .= $whr[0] . ' ' . $whr[1] . ' :' . $whr[3];
                 }
@@ -253,8 +310,68 @@ class Select extends QueryAbstract {
             $sql .= ' LIMIT  ' . $limit;
         }
 
+        return $sql;
+    }
+
+    /**
+     * Build DELETE query
+     * @return string
+     */
+    protected function _deleteQuery() {
+        if( $this->_from && $this->_type == self::TYPE_DELETE ) {
+            $sql = 'DELETE FROM ' . $this->_from[0];
+
+            // WHERE
+            if( count( $this->_where ) ) {
+                $where = '';
+
+                foreach( $this->_where AS $whr ) {
+                    if( $whr[3] === false ) {
+                        $where .= $whr[0] . ' ' . $whr[1] . ' \'' . $whr[2] . '\'';
+                    } else {
+                        $where .= $whr[0] . ' ' . $whr[1] . ' :' . $whr[3];
+                    }
+
+                    $where .= ', ';
+                }
+
+
+                // Remove last character (,)
+                $where = substr( $where, 0, -2 );
+                $sql .= ' WHERE ' . $where;
+            }
+            return $sql;
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Generate SQL
+     *
+     * @return string
+     */
+    public function sql() {
+        $sql = '';
+
+        if( $this->_type === self::TYPE_SELECT ) {
+            $sql = $this->_selectQuery();
+        } else if( $this->_type === self::TYPE_DELETE ) {
+            $sql = $this->_deleteQuery();
+        }
+
+
         $this->_sql = $sql;
 
         return $this->_sql;
+    }
+
+    /**
+     * Get binds
+     *
+     * @return array
+     */
+    public function getBinds() {
+        return $this->_bind;
     }
 }

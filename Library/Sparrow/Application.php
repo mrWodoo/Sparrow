@@ -43,6 +43,15 @@ final class Application {
                 $config->database->prefix->get(),
                 $config->database->port->get() );
 
+            $query = new \Sparrow\Database\QueryBuilder();
+
+
+            $query->delete()
+                ->from( 'dupa' )
+                ->where( 'id', '=', 10, true );
+
+            echo $query->sql();
+
         } catch( Exception $exception ) {
             echo $exception;
         }
