@@ -46,11 +46,11 @@ final class Application {
             $query = new \Sparrow\Database\QueryBuilder();
 
 
-            $query->update( 'users' )
-                ->set( 'id', 10 )
-                ->set( 'test', 50 )
-                ->where( 'id', '=', 10, true )
-                ->where( 'dupa', '=', 50, true );
+            $query->into( 'users' )
+            ->insert( [
+                    'id' => 0,
+                    'name' => [ 'denis', true ]
+                ] );
 
             echo $query->sql();
 

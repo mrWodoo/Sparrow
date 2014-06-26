@@ -25,7 +25,7 @@
       <file leaf-file-name="Application.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="43" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-30.625" vertical-offset="15" max-vertical-offset="1095">
+            <state line="50" column="29" selection-start="1179" selection-end="1179" vertical-scroll-proportion="-29.375" vertical-offset="15" max-vertical-offset="1095">
               <folding />
             </state>
           </provider>
@@ -34,7 +34,7 @@
       <file leaf-file-name="QueryBuilder.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database/QueryBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="384" column="43" selection-start="7642" selection-end="7642" vertical-scroll-proportion="0.6348247" vertical-offset="5235" max-vertical-offset="7020">
+            <state line="514" column="41" selection-start="10829" selection-end="10829" vertical-scroll-proportion="-0.051995162" vertical-offset="7753" max-vertical-offset="8580">
               <folding>
                 <element signature="e#6#87#0" expanded="true" />
               </folding>
@@ -346,7 +346,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.12696493" vertical-offset="0" max-vertical-offset="827">
           <folding>
-            <element signature="e#6#26#0" expanded="true" />
+            <element signature="e#6#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,14 +402,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="43" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-30.625" vertical-offset="15" max-vertical-offset="1095">
+        <state line="50" column="29" selection-start="1179" selection-end="1179" vertical-scroll-proportion="-29.375" vertical-offset="15" max-vertical-offset="1095">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database/QueryBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="384" column="43" selection-start="7642" selection-end="7642" vertical-scroll-proportion="0.6348247" vertical-offset="5235" max-vertical-offset="7020">
+        <state line="514" column="41" selection-start="10829" selection-end="10829" vertical-scroll-proportion="-0.051995162" vertical-offset="7753" max-vertical-offset="8580">
           <folding>
             <element signature="e#6#87#0" expanded="true" />
           </folding>

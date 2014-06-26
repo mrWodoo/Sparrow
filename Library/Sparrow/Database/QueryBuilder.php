@@ -78,6 +78,21 @@ class QueryBuilder {
     protected $_set = [];
 
     /**
+     * INTO, table name to which we will be
+     * inserting data
+     *
+     * @var string
+     */
+    protected $_into = '';
+
+    /**
+     * INSERT, set of values to insert
+     *
+     * @var array
+     */
+    protected $_insert = [];
+
+    /**
      * WHERE clause
      *
      * @var array
@@ -261,7 +276,51 @@ class QueryBuilder {
     }
 
     /**
-     * Build SELECR query
+     * Set INTO
+     *
+     * @param string $table
+     * @return \Sparrow\Database\QueryBuilder
+     */
+    public function into( $table ) {
+        $this->_type = self::TYPE_INSERT;
+        $this->_into = $table;
+
+        return $this;
+    }
+
+    /**
+     * Set data to insert
+     *
+     * @param array $data [ column => [ value, bind ] ]
+     * @return \Sparrow\Database\QueryBuilder
+     */
+    public function insert( array $data ) {
+
+        foreach( $data AS $column => $insert ) {
+            if( is_array( $insert ) ) {
+                $bind = $insert[1];
+
+                if( $bind === true ) {
+                    $key = 'bind' . count( $this->_bind );
+                } else if( $bind != false ) {
+                    $key = $bind;
+                } else if( $bind === false ) {
+                    $key = false;
+                }
+
+                $this->_bind[ $key ] = $insert[0];
+
+                $this->_insert[ $column ] = [ $insert, $key ];
+            } else {
+                $this->_insert[ $column ] = [ $insert, false ];
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Build SELECT query
      *
      * @return string
      */
@@ -380,7 +439,11 @@ class QueryBuilder {
             foreach( $this->_set AS $column => $data ) {
                 if( $data[1] === false ) {
                     //no bind
-                    $set .= $column . ' = \'' . $data[0] . '\', ';
+                    if( is_int( $data[0] ) ) {
+                        $set .= $column . ' = ' . $data[0] . ', ';
+                    } else {
+                        $set .= $column . ' = \'' . $data[0] . '\', ';
+                    }
                 } else {
                     $set .= $column . ' = :' . $data[1] . ', ';
                 }
@@ -392,6 +455,45 @@ class QueryBuilder {
 
             // WHERE
             $sql .= $this->_whereClause();
+
+            return $sql;
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Build INSERT query
+     *
+     * @return string
+     */
+    protected function _insertQuery() {
+        if( $this->_into && count( $this->_insert ) && $this->_type == self::TYPE_INSERT ) {
+            $sql = 'INSERT INTO ' . $this->_into;
+
+            $columns = '';
+            $values = '';
+
+            foreach( $this->_insert AS $column => $insert ) {
+                $columns .= $column . ', ';
+
+                if( $insert[1] !== false ) {
+                    $values .= ':' . $insert[1] . ', ';
+                } else {
+                    if( is_int( $insert[0] ) ) {
+                        $values .= '' . $insert[0] . ', ';
+                    } else {
+                        $values .= '\'' . $insert[0] . '\', ';
+                    }
+                }
+            }
+
+            $columns = substr( $columns, 0, -2 );
+            $values = substr( $values, 0, -2 );
+
+            $sql .= '(' . $columns . ')';
+            $sql .= ' VALUES(' . $values . ')';
+
 
             return $sql;
         } else {
@@ -444,6 +546,8 @@ class QueryBuilder {
             $sql = $this->_deleteQuery();
         } else if( $this->_type === self::TYPE_UPDATE ) {
             $sql = $this->_updateQuery();
+        } else if( $this->_type === self::TYPE_INSERT ) {
+            $sql = $this->_insertQuery();
         }
 
 
