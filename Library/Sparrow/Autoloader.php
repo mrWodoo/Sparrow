@@ -4,6 +4,8 @@
  */
 namespace Sparrow;
 
+
+
 class Autoloader {
     /**
      * Singleton instance
@@ -81,9 +83,24 @@ class Autoloader {
         // Let's check if we have already
         // included class' file
         if( !isset( $this->_loaded[ $className ] ) ) {
-            $classFile = $this->_library . str_replace( '\\', '/', $className ) . '.php';
+
+            if( substr_count( $className, '_' ) ) {
+                $classFile = $this->_library . str_replace( '_', '/', $className ) . '.php';
+            } else {
+                $classFile = $this->_library . str_replace( '\\', '/', $className ) . '.php';
+            }
+
             require_once( $classFile );
             $this->_loaded[ $className ] = true;
         }
+    }
+
+    /**
+     * Get instance
+     *
+     * @return /Sparrow/Autoloader
+     */
+    public static function getInstance() {
+        return self::$_instance;
     }
 }

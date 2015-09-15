@@ -4,6 +4,7 @@
  */
 namespace Sparrow;
 
+
 class DependencyInjection {
     /**
      * Container for objects/instructions

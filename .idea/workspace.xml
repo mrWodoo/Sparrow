@@ -22,22 +22,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Application.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="29" selection-start="1179" selection-end="1179" vertical-scroll-proportion="-29.375" vertical-offset="15" max-vertical-offset="1095">
+            <state line="89" column="33" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.45344618" vertical-offset="930" max-vertical-offset="2025">
+              <folding>
+                <element signature="e#57#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/Templates/bootstrap/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="38" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="1605">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryBuilder.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database/QueryBuilder.php">
+      <file leaf-file-name="Session.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/Sparrow/Session.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="514" column="41" selection-start="10829" selection-end="10829" vertical-scroll-proportion="-0.051995162" vertical-offset="7753" max-vertical-offset="8580">
-              <folding>
-                <element signature="e#6#87#0" expanded="true" />
-              </folding>
+            <state line="205" column="12" selection-start="4954" selection-end="4954" vertical-scroll-proportion="-24.458334" vertical-offset="2488" max-vertical-offset="3315">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="30" selection-start="1933" selection-end="1933" vertical-scroll-proportion="-12.208333" vertical-offset="1057" max-vertical-offset="1935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/Sparrow/Controller/Board.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="1" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,22 +84,29 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/Library/Autoloader.php" />
-        <option value="$PROJECT_DIR$/Library/Sparrow/Autoloader.php" />
-        <option value="$PROJECT_DIR$/Library/Sparrow/Exception.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Exception/DependencyInjection.php" />
-        <option value="$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php" />
         <option value="$PROJECT_DIR$/Library/Storage/Config.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Exception/Database.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/ConfigReader.php" />
-        <option value="$PROJECT_DIR$/Storage/Config.php" />
-        <option value="$PROJECT_DIR$/Library/Sparrow/Database.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Database/Query.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Database/Query/Select.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Database/QueryAbstract.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Database/Query/Delete.php" />
-        <option value="$PROJECT_DIR$/Library/Sparrow/Application.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Exception.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Http/Request.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Controller/Board.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/FrontController.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Autoloader.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Twig.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Cache/File.php" />
+        <option value="$PROJECT_DIR$/Storage/Config.php" />
+        <option value="$PROJECT_DIR$/Public/Templates/bootstrap/index.html" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Database.php" />
         <option value="$PROJECT_DIR$/Library/Sparrow/Database/QueryBuilder.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Session.php" />
+        <option value="$PROJECT_DIR$/Library/Sparrow/Application.php" />
       </list>
     </option>
   </component>
@@ -107,7 +141,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,6 +183,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparrow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -176,7 +263,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Exception" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -204,6 +291,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -214,6 +302,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GitHub.app" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
@@ -316,8 +405,198 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+        <state line="70" column="0" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1485">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="69" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="32" selection-start="2013" selection-end="2013" vertical-scroll-proportion="0.0" vertical-offset="1211" max-vertical-offset="2985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="30" selection-start="2466" selection-end="2466" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="3945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="42" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="115" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="7" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception/DependencyInjection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/ConfigReader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="7" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2910">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="115" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="1380">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="7" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception/DependencyInjection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/ConfigReader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="7" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2910">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1110">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="110" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="26" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="110" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="1" selection-start="304" selection-end="305" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="81" selection-start="2212" selection-end="2212" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -328,90 +607,145 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="35" selection-start="1884" selection-end="1884" vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="1425">
-          <folding />
-        </state>
+        <state line="74" column="35" selection-start="1884" selection-end="1884" vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="1425" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Autoloader.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/ConfigReader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="48" selection-start="1814" selection-end="1814" vertical-scroll-proportion="0.8367594" vertical-offset="583" max-vertical-offset="1410">
-          <folding>
-            <element signature="e#6#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="84" selection-end="84" vertical-scroll-proportion="0.12696493" vertical-offset="0" max-vertical-offset="827">
-          <folding>
-            <element signature="e#6#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="36" selection-start="770" selection-end="770" vertical-scroll-proportion="-0.07013301" vertical-offset="613" max-vertical-offset="1440">
+        <state line="28" column="7" selection-start="387" selection-end="387" vertical-scroll-proportion="0.01842752" vertical-offset="375" max-vertical-offset="2880">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="34" selection-start="313" selection-end="313" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="330" />
+        <state line="19" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.3446191" vertical-offset="0" max-vertical-offset="827">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception/DependencyInjection.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/FrontController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.09068924" vertical-offset="0" max-vertical-offset="827" />
+        <state line="88" column="86" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.25392985" vertical-offset="1080" max-vertical-offset="4185">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/DependencyInjection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="32" selection-start="1885" selection-end="1885" vertical-scroll-proportion="0.6735187" vertical-offset="763" max-vertical-offset="1770">
+        <state line="6" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.036275696" vertical-offset="90" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="0" selection-start="1913" selection-end="1913" vertical-scroll-proportion="-26.333334" vertical-offset="703" max-vertical-offset="1635">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Cache/File.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="31" selection-start="1307" selection-end="1307" vertical-scroll-proportion="12.416667" vertical-offset="1198" max-vertical-offset="2025">
           <folding>
-            <element signature="e#6#25#0" expanded="true" />
+            <element signature="e#33#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Storage/Config.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception/DependencyInjection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="7" selection-start="13" selection-end="13" vertical-scroll-proportion="0.018137848" vertical-offset="0" max-vertical-offset="827" />
+        <state line="7" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.09328358" vertical-offset="0" max-vertical-offset="804">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/ConfigReader.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="32" selection-start="3451" selection-end="3451" vertical-scroll-proportion="0.5945946" vertical-offset="2096" max-vertical-offset="2910">
+        <state line="63" column="18" selection-start="1467" selection-end="2365" vertical-scroll-proportion="0.25552824" vertical-offset="707" max-vertical-offset="1590">
           <folding>
-            <element signature="e#6#57#0" expanded="false" />
+            <marker date="1404363981000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1404363981000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1404363981000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1404363981000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1404363981000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/Exception/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="112" selection-end="112" vertical-scroll-proportion="0.14510278" vertical-offset="0" max-vertical-offset="827">
+        <state line="8" column="1" selection-start="112" selection-end="112" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Templates/bootstrap/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="38" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="1605">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Controller/Board.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="177" selection-end="177" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Twig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="45" selection-start="3012" selection-end="3012" vertical-scroll-proportion="0.8367594" vertical-offset="1333" max-vertical-offset="2220">
           <folding>
-            <element signature="e#6#35#0" expanded="true" />
+            <element signature="e#6#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Http/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="29" selection-start="1179" selection-end="1179" vertical-scroll-proportion="-29.375" vertical-offset="15" max-vertical-offset="1095">
+        <state line="108" column="32" selection-start="2013" selection-end="2013" vertical-scroll-proportion="21.708334" vertical-offset="2096" max-vertical-offset="2940">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Storage/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.018137848" vertical-offset="0" max-vertical-offset="827">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database/QueryBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="514" column="41" selection-start="10829" selection-end="10829" vertical-scroll-proportion="-0.051995162" vertical-offset="7753" max-vertical-offset="8580">
+        <state line="433" column="53" selection-start="8623" selection-end="8623" vertical-scroll-proportion="0.44498187" vertical-offset="6127" max-vertical-offset="8820">
           <folding>
             <element signature="e#6#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="30" selection-start="1933" selection-end="1933" vertical-scroll-proportion="-12.208333" vertical-offset="1057" max-vertical-offset="1935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="12" selection-start="4954" selection-end="4954" vertical-scroll-proportion="-24.458334" vertical-offset="2488" max-vertical-offset="3315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/Sparrow/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="33" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.45344618" vertical-offset="930" max-vertical-offset="2025">
+          <folding>
+            <element signature="e#57#80#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -103,6 +103,19 @@ class Database {
     }
 
     /**
+     * Alias to sql method
+     * Execute SQL query
+     *
+     * @param string $sql
+     * @param array $bind
+     * @return \PDOStatement
+     * @throws \Sparrow\Exception\Database
+     */
+    public function query( $sql, array $bind = [] ) {
+        return $this->sql( $sql, $bind );
+    }
+
+    /**
      * Last insert id
      *
      * @return integer

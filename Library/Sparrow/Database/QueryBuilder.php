@@ -9,6 +9,13 @@ namespace Sparrow\Database;
 
 class QueryBuilder {
     /**
+     * Table prefix
+     * 
+     * @var string
+     */
+    private static $_prefix = 'sp_';
+
+    /**
      * Query type
      *
      * @var int
@@ -119,6 +126,15 @@ class QueryBuilder {
      * @var array
      */
     protected $_limit = [];
+
+    /**
+     * Set table prefix
+     * 
+     * @param string $prefix
+     */
+    public static function setPrefix( $prefix ) {
+        self::$_prefix = $prefix;
+    }
 
     /**
      * Add data to select
@@ -245,7 +261,7 @@ class QueryBuilder {
      */
     public function update( $table ) {
         $this->_type = self::TYPE_UPDATE;
-        $this->_update = $table;
+        $this->_update = self::$_prefix . $table;
 
         return $this;
     }
@@ -283,7 +299,7 @@ class QueryBuilder {
      */
     public function into( $table ) {
         $this->_type = self::TYPE_INSERT;
-        $this->_into = $table;
+        $this->_into = self::$_prefix . $table;
 
         return $this;
     }
@@ -350,7 +366,7 @@ class QueryBuilder {
             $from = '';
 
             foreach( $this->_from AS $frm ) {
-                $from .= $frm . ', ';
+                $from .= self::$_prefix . $frm . ', ';
             }
 
 
@@ -415,7 +431,7 @@ class QueryBuilder {
      */
     protected function _deleteQuery() {
         if( $this->_from && $this->_type == self::TYPE_DELETE ) {
-            $sql = 'DELETE FROM ' . $this->_from[0];
+            $sql = 'DELETE FROM ' . self::$_prefix . $this->_from[0];
 
             // WHERE
             $sql .= $this->_whereClause();
